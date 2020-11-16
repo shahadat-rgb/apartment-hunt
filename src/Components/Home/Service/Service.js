@@ -4,7 +4,6 @@ import apartment2 from "../../../image/logos/apartment2.png"
 import apartment3 from "../../../image/logos/apartment3.png"
 const Service = () => {
   return (
-<<<<<<< HEAD
     <div className='container'>
          <div className="text-center mt-5 mb-5">
              <h5 style={{color:'rgba(52, 73, 63, 0.986)rgba(52, 73, 70, 0.986)',marginTop:'20px'}}>Service</h5>
@@ -30,12 +29,8 @@ const Service = () => {
 
         </div>
    </div>
-=======
-    <div>
-      <h2>service page</h2> 
-      <h3>Hello from tareque</h3>
-    </div>
->>>>>>> 723d5a0665d94247d992697828a8cfb4684c3818
+
+    
   );
 };
 

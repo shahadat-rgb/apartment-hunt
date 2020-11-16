@@ -8,8 +8,6 @@ const Event = () => {
       <div className="container">
       <button className="mt-5" onClick={() => history.push('/service')}>event page</button>
 
-      <h3>hello event ami shahadat</h3>
-
     </div>
     </section>
   );
