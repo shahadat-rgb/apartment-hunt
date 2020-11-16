@@ -14,6 +14,7 @@ import NotFound from './Components/Home/NotFound/NotFound';
 import Event from './Components/Home/Event/Event';
 import PrivateRoute from './Components/Home/PrivateRoute/PrivateRoute';
 import Header from './Components/Home/Header/Header';
+import Admin from './Components/AdminPanel/Admin';
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -32,6 +33,9 @@ function App() {
 
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="/admin">
+          <Admin></Admin>
           </Route>
         
          
