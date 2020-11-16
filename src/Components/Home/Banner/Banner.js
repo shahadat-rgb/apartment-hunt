@@ -7,7 +7,7 @@ const Banner = () => {
     <main  className="banner">
     <div className="container ">
        <div className="pt-5">
-          <h1 className="text-center text-uppercase  banner-rent"> Find Your House Rent </h1>
+          <h1 className="text-center text-uppercase  banner-rent"> Find your House Rent   </h1>
         <div className=" d-flex justify-content-center align-items-center mt-5">
           <Form inline textAlign="center">
             <FormControl
