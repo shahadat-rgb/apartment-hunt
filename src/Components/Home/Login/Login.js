@@ -93,107 +93,108 @@ const Login = () => {
   return (
     <section>
       <div className="login-form  ">
-      
-          <form onSubmit={handleSubmit}>
-            <h1 style={{ color: "orange" }} className="text-center mt-5">
-              {newUser ? "Create an Account" : "User Login"}
-            </h1>
-            <div className="row d-flex justify-content-center align-items-center">
-              {newUser && (
-                <div className="form-group col-12 col-md-8">
-                  <input
-                    onBlur={handleBlur}
-                    type="text"
-                    name="name"
-                    className="form-control"
-                    placeholder="Your name "
-                    required
-                  />
-                </div>
-              )}
-
+        <form onSubmit={handleSubmit}>
+          <h1 style={{ color: "orange" }} className="text-center mt-5">
+            {newUser ? "Create an Account" : "User Login"}
+          </h1>
+          <div className="row d-flex justify-content-center align-items-center">
+            {newUser && (
               <div className="form-group col-12 col-md-8">
                 <input
                   onBlur={handleBlur}
                   type="text"
-                  name="email"
+                  name="name"
                   className="form-control"
-                  placeholder="Your  email Address "
+                  placeholder="Your name "
                   required
                 />
               </div>
+            )}
+
+            <div className="form-group col-12 col-md-8">
+              <input
+                onBlur={handleBlur}
+                type="text"
+                name="email"
+                className="form-control"
+                placeholder="Your  email Address "
+                required
+              />
+            </div>
+            <div className="form-group col-12 col-md-8">
+              <input
+                onBlur={handleBlur}
+                type="password"
+                name="password"
+                className="form-control"
+                placeholder="Enter your password  "
+                required
+              />
+            </div>
+            {newUser && (
               <div className="form-group col-12 col-md-8">
                 <input
                   onBlur={handleBlur}
                   type="password"
-                  name="password"
+                  name="confirm"
                   className="form-control"
-                  placeholder="Enter your password  "
+                  placeholder="Enter confirm password  "
                   required
                 />
               </div>
-              {newUser && (
-                <div className="form-group col-12 col-md-8">
+            )}
+
+            {!newUser && (
+              <div className="from-group col-12 col-md-8 d-flex justify-content-between ">
+                <div class="form-group form-check">
                   <input
-                    onBlur={handleBlur}
-                    type="password"
-                    name="confirm"
-                    className="form-control"
-                    placeholder="Enter confirm password  "
-                    required
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
                   />
+                  <label class="form-check-label" for="exampleCheck1">
+                    Remember Me
+                  </label>
                 </div>
-              )}
-
-            {!newUser && 
-            
-            <div className="from-group col-12 col-md-8 d-flex justify-content-between ">
-            <div class="form-group form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label class="form-check-label" for="exampleCheck1">
-                Remember Me
-              </label>
-            </div>
-            <div>
-              <p onClick={ ()=>user.email && sendVerification(user.email)} style={{color:"orange", cursor:"pointer"}}>
-                Forget Password
-              </p>
-            </div>
-          </div>
-            }
-
-              <div className="col-12 col-md-8  ">
-                <p className="submit" type="submit">
-                  {newUser ? "Create an Account" : "Login"}
-                </p>
+                <div>
+                  <p
+                    onClick={() => user.email && sendVerification(user.email)}
+                    style={{ color: "orange", cursor: "pointer" }}
+                  >
+                    Forget Password
+                  </p>
+                </div>
               </div>
+            )}
+
+            <div className="col-12 col-md-8  ">
+              <button className="submit" type="submit">
+                {newUser ? "Create an Account" : "Login"}
+              </button>
             </div>
-          </form>
-
-          <div className="">
-            {newUser ? "Already have an account?" : "Don't have an account?"}
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => setNewUser(!newUser)}
-              className="text-warning"
-            >
-              {newUser ? "Login" : " Create an account"}
-            </span>
           </div>
+        </form>
 
-          <p style={{ color: "red" }}>{user.error}</p>
-          {user.success && (
-            <p style={{ color: "green" }}>
-              User {newUser ? "created" : "Logged In"} successfully
-            </p>
-          )}
-          <hr />
+        <div className="">
+          {newUser ? "Already have an account?" : "Don't have an account?"}
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => setNewUser(!newUser)}
+            className="text-warning"
+          >
+            {newUser ? "Login" : " Create an account"}
+          </span>
+        </div>
 
-          {/*   {user.isSignedIn ? (
+        <p style={{ color: "red" }}>{user.error}</p>
+        {user.success && (
+          <p style={{ color: "green" }}>
+            User {newUser ? "created" : "Logged In"} successfully
+          </p>
+        )}
+        <hr />
+
+        {/*   {user.isSignedIn ? (
             <button onClick={signOut}>Sign Out</button>
           ) : (
           
@@ -208,38 +209,38 @@ const Login = () => {
       <button   onClick={fbSignIn}>
           Continue With Facebook Sign In
         </button> */}
+      </div>
+      <div
+        className="col-12 col-md-8"
+        style={{ width: "500px", margin: "auto" }}
+      >
+        <p style={{ textAlign: "center" }}>---------- Or -----------</p>
 
-        
+        <div
+          onClick={fbSignIn}
+          style={{ cursor: "pointer" }}
+          className="login-section"
+        >
+          <img
+            style={{ width: "30px", height: "30px", marginRight: "10px" }}
+            src={fb}
+            alt=""
+          />
+          <p>Continue with Facebook</p>
         </div>
-        <div style={{ width: "300px", margin: "auto" }}>
-            <p style={{ textAlign: "center" }}>---------- Or -----------</p>
-
-            <div
-              onClick={fbSignIn}
-              style={{ cursor: "pointer" }}
-              className="login-section"
-                          
-            >
-              <img
-                style={{ width: "30px", height: "30px", marginRight: "10px" }}
-                src={fb}
-                alt=""
-              />
-              <p>Continue with Facebook</p>
-            </div>
-            <div
-              onClick={googleSignIn}
-              style={{ cursor: "pointer" }}
-              className="login-section"
-            >
-              <img
-                style={{ width: "30px", height: "30px", marginRight: "10px" }}
-                src={google}
-                alt=""
-              />
-              <p>Continue with Google</p>
-            </div>
-          </div>
+        <div
+          onClick={googleSignIn}
+          style={{ cursor: "pointer" }}
+          className="login-section"
+        >
+          <img
+            style={{ width: "30px", height: "30px", marginRight: "10px" }}
+            src={google}
+            alt=""
+          />
+          <p>Continue with Google</p>
+        </div>
+      </div>
     </section>
   );
 };

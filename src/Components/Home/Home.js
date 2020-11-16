@@ -1,11 +1,11 @@
-import React from 'react';
-import Event from './Event/Event';
-
-
+import React from "react";
+import Banner from "./Banner/Banner";
+import Event from "./Event/Event";
+import './Home.css'
 const Home = () => {
   return (
-    <div>
-     
+    <div className="home">
+      <Banner></Banner>
       <Event></Event>
     </div>
   );
