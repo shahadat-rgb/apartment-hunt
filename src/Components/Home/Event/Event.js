@@ -101,7 +101,7 @@ const Event = () => {
 <div class="card">
     <img class="card-img-top" src={rectangle4} alt="Card image cap"/>
     <div class="card-body">
-      <h4 style={{color:'#275a53',fontWeight:'bold'}} class="card-title">luxary Villa</h4>
+      <h4 style={{color:'#275a53',fontWeight:'bold'}} class="card-title">Luxary Villa</h4>
          <div style={{float:'left'}}>
          <img style={{height:'20px'}} src={location} alt=""/>
          </div>
