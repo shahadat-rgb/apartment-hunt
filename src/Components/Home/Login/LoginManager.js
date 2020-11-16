@@ -132,6 +132,7 @@ const verifyEmail= () =>{
 
       user.sendEmailVerification().then(function() {
         // Email sent.
+        alert("success !! An email has been sent to your email. Please Check it.")
       }).catch(function(error) {
         // An error happened.
       });
@@ -144,7 +145,9 @@ export const forgetPassword=email=>{
 
       auth.sendPasswordResetEmail(email).then(function() {
         // Email sent.
+        alert("success An reset password link has been sent to your email. Please Check.")
       }).catch(function(error) {
         // An error happened.
+        alert("sorry! this email is not valid.Please try again ")
       });
 }
