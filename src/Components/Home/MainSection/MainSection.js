@@ -4,7 +4,7 @@ import Service from '../Service/Service';
 
 const MainSection = () => {
     return (
-         <div style={{backgroundColor:'rgba(170, 209, 185, 0.179)'}}>
+         <div style={{backgroundColor:'rgba(170, 209, 185, 0.175)'}}>
             <Rent></Rent>
             <Service></Service>
         </div>
