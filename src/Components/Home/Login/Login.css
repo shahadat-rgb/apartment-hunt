@@ -4,6 +4,7 @@
   height: auto;
   width: 470px;
   padding: 10px 20px;
+  
 }
 
 .forms {
@@ -20,13 +21,12 @@
   padding: 5px 0px;
   cursor: pointer; */
   
-  background: #FFFFFF;
+background: #FFFFFF;
 border: 1px solid #C7C7C7;
 box-sizing: border-box;
 border-radius: 57px;
 padding: 5px 0px;
 width: 457px;
-height: 51px;
 cursor: pointer;
 margin-bottom: 5px;
 }
