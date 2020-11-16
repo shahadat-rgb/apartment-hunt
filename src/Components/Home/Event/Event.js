@@ -7,6 +7,7 @@ const Event = () => {
     <section>
       <div className="container">
       <button className="mt-5" onClick={() => history.push('/service')}>event page</button>
+      <h1>Hello from tareque</h1>
     </div>
     </section>
   );
