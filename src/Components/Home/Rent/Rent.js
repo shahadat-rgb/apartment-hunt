@@ -1,6 +1,6 @@
 import React from 'react';
 // import { useHistory } from 'react-router-dom';
-import './Event.css'
+import './Rent.css'
 import rectangle1 from "../../../image/images/Rectangle1.png"
 import rectangle2 from "../../../image/images/Rectangle2.png"
 import rectangle3 from "../../../image/images/Rectangle3.png"
@@ -10,14 +10,14 @@ import rectangle6 from "../../../image/images/Rectangle6.png"
 import location from "../../../image/logos/location.png"
 import bed from "../../../image/logos/bed.png"
 import bath from "../../../image/logos/bath.png"
-const Event = () => {
+const Rent = () => {
   // const history = useHistory();
   return (
     <div className="container">
         <div className="text-center mb-5">
-             <h5 style={{color:'rgba(52, 73, 63, 0.986)rgba(52, 73, 70, 0.986)',marginTop:'20px'}}>House Rent</h5>
-             <h2 style={{color:'rgb(48, 99, 92)',fontWeight:"bold"}}>Discover The Latest Rent</h2>
-             <h2 style={{color:'rgb(48, 99, 92)',fontWeight:"bold"}}> Available Today</h2>
+             <h5 style={{color:'rgba(52, 73, 63, 0.986)rgba(52, 73, 70, 0.986)',paddingTop:'20px'}}>House Rent</h5>
+             <h2 style={{color:'rgb(22, 49, 38)',fontWeight:"bold"}}>Discover The Latest Rent</h2>
+             <h2 style={{color:'rgb(22, 49, 38)',fontWeight:"bold"}}> Available Today</h2>
         </div>
 
         <div class="card-deck">
@@ -65,7 +65,7 @@ const Event = () => {
           </div>
           </div>
         <div className="mt-3">
-        <span className='price'>$244</span>
+        <span className='price'>$999</span>
         <span> <button className="details-btn">View Details</button></span>
         </div>
     </div>
@@ -89,7 +89,7 @@ const Event = () => {
           </div>
           </div>
         <div className="mt-3">
-        <span className='price'>$244</span>
+        <span className='price'>$755</span>
         <span> <button className="details-btn">View Details</button></span>
         </div>
     </div>
@@ -117,7 +117,7 @@ const Event = () => {
           </div>
           </div>
         <div className="mt-3">
-        <span className='price'>$244</span>
+        <span className='price'>$664</span>
         <span> <button className="details-btn">View Details</button></span>
         </div>
     </div>
@@ -142,7 +142,7 @@ const Event = () => {
           </div>
           </div>
         <div className="mt-3">
-        <span className='price'>$244</span>
+        <span className='price'>$321</span>
         <span> <button className="details-btn">View Details</button></span>
         </div>
     </div>
@@ -167,7 +167,7 @@ const Event = () => {
           </div>
           </div>
         <div className="mt-3">
-        <span className='price'>$244</span>
+        <span className='price'>$454</span>
         <span> <button className="details-btn">View Details</button></span>
         </div>
     </div>
@@ -179,7 +179,7 @@ const Event = () => {
   );
 };
 
-export default Event;
+export default Rent;
 
 
 

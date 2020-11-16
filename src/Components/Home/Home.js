@@ -1,11 +1,12 @@
 import React from "react";
 import Banner from "./Banner/Banner";
-import Event from "./Event/Event";
+import MainSection from "./MainSection/MainSection";
+import Rent from "./Rent/Rent";
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <Event></Event>
+       <MainSection></MainSection>
     </div>
   );
 };
