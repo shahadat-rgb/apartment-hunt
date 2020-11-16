@@ -40,7 +40,7 @@ function App() {
         </PrivateRoute>
         
         <Route path="/event">
-          <Event></Event>
+        
         </Route>
 
           <Route path="*">
