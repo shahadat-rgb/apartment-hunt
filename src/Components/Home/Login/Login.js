@@ -107,9 +107,9 @@ const Login = () => {
       <div className="container">
         <div className="forms">
           <div className="inputs">
-            <h1 style={{ color: "orange" }} className="text-center mt-5">
-              {newUser ? "Create an Account" : "User Login"}
-            </h1>
+            <h3 style={{ color: "#000000" }} className="pt-2">
+              {newUser ? "Create an Account" : "Login"}
+            </h3>
 
             <div className="d-flex justify-content-center align-items-center">
               <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
@@ -208,7 +208,7 @@ const Login = () => {
                 <div className="col-md-2 icon">
                   <img src={fb} alt="" />
                 </div>
-                <div className="col-md-10">
+                <div className="col-md-10 ">
                   <h4>
                     <strong>Continue with facebook</strong>
                   </h4>
