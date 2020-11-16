@@ -1,21 +1,14 @@
-.banner{
-  background-image: url('../../../image/images/Rectangle\ 409.png');
-   /* height: 100%; */
-   height: 554px;
-  width: 100%;
-  position: relative;
-
-left: 0px;
-top: 0px;
-padding-bottom: 100px;
+.find-btn{
+    background-color: #275a53;
+    padding: 7px 30px 7px 30px;
+    border-radius: 5px;
+    border: none;
+    color: white;
 }
-.banner-rent{
-font-family: Montserrat;
-font-size: 48px;
-font-style: normal;
-font-weight: 700;
-line-height: 59px;
-letter-spacing: 0em;
-text-align: center;
-color: #FFFFFF;
+.background{
+    background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../../../image/images/Rectangle13.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: bottom;
+
 }

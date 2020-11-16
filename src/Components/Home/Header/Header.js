@@ -18,13 +18,13 @@ const Header = () => {
     }
   };
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div className="container">
         <Link to="/home" className="navbar-brand">
           <img src={logo} alt="" className="img-fluid" width="30%" />
         </Link>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler bg-secondary"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -37,19 +37,19 @@ const Header = () => {
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto" style={{ fontSize: " 1.22em" }}>
-            <li class="nav-item active">
-              <Link className="nav-link ml-2 " to="/home">
+            <li class="nav-item">
+              <Link className="nav-link mr-4 text-dark" to="/home">
                 Home
               </Link>
             </li>
             <li class="nav-item">
-              <Link className="nav-link" to="/service">
+              <Link className="nav-link mr-4 text-dark" to="/service">
                 Service
               </Link>
             </li>
 
             <li class="nav-item">
-              <Link className="nav-link" to="/event">
+              <Link className="nav-link mr-4 text-dark" to="/event">
                 Event
               </Link>
             </li>

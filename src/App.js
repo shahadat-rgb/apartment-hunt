@@ -8,11 +8,10 @@ import {
  
 } from "react-router-dom";
 import Home from './Components/Home/Home';
-import Service from './Components/Home/Service/Service';
+// import Service from './Components/Home/Service/Service';
 import Login from './Components/Home/Login/Login';
 import NotFound from './Components/Home/NotFound/NotFound';
-import Event from './Components/Home/Event/Event';
-import PrivateRoute from './Components/Home/PrivateRoute/PrivateRoute';
+// import PrivateRoute from './Components/Home/PrivateRoute/PrivateRoute';
 import Header from './Components/Home/Header/Header';
 import Admin from './Components/AdminPanel/Admin';
 export const UserContext = createContext();
@@ -39,12 +38,12 @@ function App() {
           </Route>
         
          
-        <PrivateRoute path="/service">
+        {/* <PrivateRoute path="/service">
           <Service></Service>
         </PrivateRoute>
-        
+         */}
         <Route path="/event">
-          <Event></Event>
+        
         </Route>
 
           <Route path="*">
