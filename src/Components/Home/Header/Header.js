@@ -61,6 +61,11 @@ const Header = () => {
                 </button>
               </Link>
             </li>
+            <li class="nav-item">
+              <Link className="nav-link" to="/admin">
+                Admin
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
