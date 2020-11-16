@@ -78,6 +78,7 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
       newUserInfo.error = "";
       newUserInfo.success = true;
       updateUserName(name);
+      verifyEmail();
       return newUserInfo;
     })
     .catch((error) => {
@@ -106,23 +107,12 @@ export const signInWithEmailAndPassword = (email, password) => {
     });
 };
 
-export const sendVerification = (email) => {
-  firebase.auth().sendPasswordResetEmail(email);
-};
-//forget password
-/* export const handleForgetPassword= () => {
-  firebase.auth().sendPasswordResetEmail().then(function() {
-    // Email sent.
-  }).catch(function(error) {
-    // An error happened.
-  });
-} */
+
 
 const updateUserName = (name) => {
   const user = firebase.auth().currentUser;
 
-  user
-    .updateProfile({
+  user.updateProfile({
       displayName: name,
     })
     .then(function () {
@@ -132,3 +122,29 @@ const updateUserName = (name) => {
       console.log(error);
     });
 };
+
+
+
+//email verification
+
+const verifyEmail= () =>{
+  var user = firebase.auth().currentUser;
+
+      user.sendEmailVerification().then(function() {
+        // Email sent.
+      }).catch(function(error) {
+        // An error happened.
+      });
+}
+
+// Reset or forget password
+
+export const forgetPassword=email=>{
+        var auth = firebase.auth();
+
+      auth.sendPasswordResetEmail(email).then(function() {
+        // Email sent.
+      }).catch(function(error) {
+        // An error happened.
+      });
+}

@@ -9,6 +9,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendVerification,
+  forgetPassword,
 } from "./LoginManager";
 
 import "./Login.css";
@@ -158,7 +159,7 @@ const Login = () => {
                 </div>
                 <div>
                   <p
-                    onClick={() => user.email && sendVerification(user.email)}
+                    onClick={() => forgetPassword(user.email)}
                     style={{ color: "orange", cursor: "pointer" }}
                   >
                     Forget Password
