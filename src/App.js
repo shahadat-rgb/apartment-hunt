@@ -13,11 +13,15 @@ import Login from './Components/Home/Login/Login';
 import NotFound from './Components/Home/NotFound/NotFound';
 // import PrivateRoute from './Components/Home/PrivateRoute/PrivateRoute';
 import Header from './Components/Home/Header/Header';
+import HouseDetails from './Components/HouseDetails/HouseDetails';
 export const UserContext = createContext();
+export const HouseContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [house, setHouse]=useState({})
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <HouseContext.Provider value={[house, setHouse]}>
       <Router>
       <Header></Header>
         <Switch>
@@ -35,11 +39,11 @@ function App() {
         
          
         {/* <PrivateRoute path="/service">
-          <Service></Service>
-        </PrivateRoute>
+               <Service></Service>
+            </PrivateRoute>
          */}
-        <Route path="/event">
-        
+        <Route path="/houseDetails/:houseId">
+          <HouseDetails></HouseDetails>
         </Route>
 
           <Route path="*">
@@ -47,7 +51,9 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </HouseContext.Provider>
       </UserContext.Provider>
+     
   );
 }
 
