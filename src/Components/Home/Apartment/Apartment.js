@@ -6,7 +6,7 @@ import ApartmentList from "../ApartmentList/ApartmentList";
 const Apartment = () => {
   const [houses, setHouses] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/getApartment")
+    fetch("https://sleepy-everglades-57765.herokuapp.com/getApartment")
       .then((res) => res.json())
       .then((data) => setHouses(data));
   }, []);

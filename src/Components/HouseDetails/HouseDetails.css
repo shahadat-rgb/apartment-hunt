@@ -1,0 +1,21 @@
+.booking{
+    background-color: #275a53;
+    padding: 7px 30px 7px 30px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    width: 100%;
+    
+}
+.booking-area{   
+   background-color: rgba(170, 164, 164, 0.308);
+   padding: 30px;
+
+}
+
+.banner{
+    background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../../images/Rectangle\ 13.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: bottom;
+}

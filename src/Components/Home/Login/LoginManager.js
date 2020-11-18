@@ -106,6 +106,25 @@ export const signInWithEmailAndPassword = (email, password) => {
     });
 };
 
+export const getCurrentUser = () => {
+  return new Promise((resolve) => {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        const { displayName, email, photoURL, emailVerified } = user;
+        const currentUser = {
+          name: displayName,
+          email: email,
+          photo: photoURL,
+          emailVerified,
+        };
+        resolve(currentUser)
+      } else {
+        resolve(user);
+      }
+    });
+  });
+};
+
 export const sendVerification = (email) => {
   firebase.auth().sendPasswordResetEmail(email);
 };

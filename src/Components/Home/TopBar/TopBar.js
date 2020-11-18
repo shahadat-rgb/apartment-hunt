@@ -1,8 +1,47 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./TopBar.css";
 import logo from "../../../images/logos/Logo.png"
+import { Link, useHistory } from "react-router-dom";
+import { UserContext } from "../../../App";
+import { handleSignOut } from "../Login/LoginManager";
+
 
 const TopBar = () => {
+  let count = 0;
+  let admin = false;
+
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [adminList, setAdminList] = useState([]);
+  useEffect(() => {
+    fetch("https://sleepy-everglades-57765.herokuapp.com/getAdmin")
+      .then((res) => res.json())
+      .then((data) => setAdminList(data));
+  }, []);
+
+  let history = useHistory();
+
+  const handleLoggingButton = () => {
+    if (loggedInUser.name || loggedInUser.email) {
+      handleSignOut();
+      setLoggedInUser({});
+      history.push("/");
+    } else {
+      history.push("/login");
+    }
+  };
+
+   // if logged in user is admin then show admin button
+   if (loggedInUser){
+    adminList.map((admin) => {
+      if (admin.email === loggedInUser.email) {
+        count++; 
+      }
+      return count;
+    });
+  }
+  if (count > 0){
+    admin = true;
+  }
   return (
     <div className="container">
       <nav class="navbar navbar-expand-lg navbar-light topBar">
@@ -51,7 +90,28 @@ const TopBar = () => {
                 Contact
               </a>
             </li>
-            <button className="login-btn">Login</button>
+            <li class="nav-item mt-3">
+              {loggedInUser.name}
+            </li>
+            
+
+            <li class="nav-item">
+              <Link className="nav-link" to="/login">
+                <button onClick={handleLoggingButton} className="login-btn">
+                  {loggedInUser.name || loggedInUser.email ? "Logout" : "Login"}
+                </button>
+              </Link>
+            </li>
+            
+            <li>
+              {loggedInUser && admin && (
+                <Link className="nav-link" to="/admin">
+                  <button type="button" className="login-btn mr-3">
+                    Admin
+                  </button>
+                </Link>
+              )}
+            </li>
           </ul>
         </div>
       </nav>
