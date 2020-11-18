@@ -1,0 +1,12 @@
+.social-media .icon{
+    height: 40px;
+    width: 40px;
+    color: white;
+    
+    border: 1px solid white;
+    padding: 10px;
+  }
+  .social-media .active-icon{
+    background-color: #6ACECE ;
+    color:white;
+  }

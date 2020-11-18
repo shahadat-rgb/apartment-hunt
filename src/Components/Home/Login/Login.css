@@ -1,53 +1,31 @@
-.inputs {
-  border: 1px solid gray;
-  /* min-height: 370px; */
+.login-form {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #ababab;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 570px;
+  /* height: 530px; */
   height: auto;
-  width: 470px;
-  padding: 10px 20px;
-  
+  margin-left: 350px;
+  margin-top: 30px;
 }
 
-.forms {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.google, .facebook {
- /*  border: 1px solid black;
-  margin-bottom: 5px;
-  border-radius: 30px;
-  padding: 5px 0px;
-  cursor: pointer; */
-  
-background: #FFFFFF;
-border: 1px solid #C7C7C7;
-box-sizing: border-box;
-border-radius: 57px;
-padding: 5px 0px;
-width: 457px;
-cursor: pointer;
-margin-bottom: 5px;
-}
-.icon img {
-  width: 30px;
-  padding: 0px;
-}
-
-.submit {
+.submit-btn {
   background-image: linear-gradient(to bottom, #275a53 0%, #275a53 100%);
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px 25px;
   cursor: pointer;
-  margin: 0px 15px;
 }
 
-.text-login-create {
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
+.login-section {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  padding: 2px 20px;
+  margin: 0 0 5px 0;
+  height: 35px;
 }

@@ -78,7 +78,6 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
       newUserInfo.error = "";
       newUserInfo.success = true;
       updateUserName(name);
-      verifyEmail();
       return newUserInfo;
     })
     .catch((error) => {
@@ -107,12 +106,42 @@ export const signInWithEmailAndPassword = (email, password) => {
     });
 };
 
+export const getCurrentUser = () => {
+  return new Promise((resolve) => {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        const { displayName, email, photoURL, emailVerified } = user;
+        const currentUser = {
+          name: displayName,
+          email: email,
+          photo: photoURL,
+          emailVerified,
+        };
+        resolve(currentUser)
+      } else {
+        resolve(user);
+      }
+    });
+  });
+};
 
+export const sendVerification = (email) => {
+  firebase.auth().sendPasswordResetEmail(email);
+};
+//forget password
+/* export const handleForgetPassword= () => {
+  firebase.auth().sendPasswordResetEmail().then(function() {
+    // Email sent.
+  }).catch(function(error) {
+    // An error happened.
+  });
+} */
 
 const updateUserName = (name) => {
   const user = firebase.auth().currentUser;
 
-  user.updateProfile({
+  user
+    .updateProfile({
       displayName: name,
     })
     .then(function () {
@@ -122,32 +151,3 @@ const updateUserName = (name) => {
       console.log(error);
     });
 };
-
-
-
-//email verification
-
-const verifyEmail= () =>{
-  var user = firebase.auth().currentUser;
-
-      user.sendEmailVerification().then(function() {
-        // Email sent.
-        alert("success !! An email has been sent to your email. Please Check it.")
-      }).catch(function(error) {
-        // An error happened.
-      });
-}
-
-// Reset or forget password
-
-export const forgetPassword=email=>{
-        var auth = firebase.auth();
-
-      auth.sendPasswordResetEmail(email).then(function() {
-        // Email sent.
-        alert("success An reset password link has been sent to your email. Please Check.")
-      }).catch(function(error) {
-        // An error happened.
-        alert("sorry! this email is not valid.Please try again ")
-      });
-}

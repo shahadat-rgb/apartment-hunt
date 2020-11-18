@@ -10,7 +10,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div style={{ backgroundColor: "#275A53", color: "white" }}>
+    <div style={{ backgroundColor: "#275A53", color: "white" }} className="mt-5">
       <Container className="py-5">
         <Row>
           <Col sm={4} md={4} xs={12}>
@@ -48,7 +48,7 @@ const Footer = () => {
                 </span>
                 <ul className="social-media list-inline pt-3">
                   <li className="list-inline-item">
-                    <a target="_blank" href="//facebook.com ">
+                    <a target="blank" href="//facebook.com ">
                       <FontAwesomeIcon
                         className="icon active-icon"
                         icon={faFacebook}
@@ -56,12 +56,12 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a target="_blank" href="//google.com ">
+                    <a target="blank" href="//google.com ">
                       <FontAwesomeIcon className="icon" icon={faGoogle} />
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a target="_blank" href="//instagram.com ">
+                    <a target="blank" href="//instagram.com ">
                       <FontAwesomeIcon className="icon" icon={faInstagram} />
                     </a>
                   </li>

@@ -1,14 +1,14 @@
+.hero-banner{
+    background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../../../images/Rectangle\ 13.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: bottom;
+}
+
 .find-btn{
     background-color: #275a53;
     padding: 7px 30px 7px 30px;
     border-radius: 5px;
     border: none;
     color: white;
-}
-.background{
-    background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../../../image/images/Rectangle13.png);
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: bottom;
-
 }

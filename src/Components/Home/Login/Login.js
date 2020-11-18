@@ -8,26 +8,15 @@ import {
   handleFbSignIn,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  forgetPassword,
+  sendVerification,
 } from "./LoginManager";
 
 import "./Login.css";
-import fb from "../../../image/logos/Group 2.png";
-import google from "../../../image/logos/Group 573.png";
+import fb from "../../../images/logos/Group 2.png";
+import google from "../../../images/logos/Group 573.png";
+import TopBar from "../TopBar/TopBar";
 
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "50ch",
-    },
-  },
-}));
 const Login = () => {
-  const classes = useStyles();
   const [newUser, setNewUser] = useState(false);
   const [user, setUser] = useState({
     isSignedIn: false,
@@ -104,133 +93,157 @@ const Login = () => {
   };
   return (
     <section>
-      <div className="container">
-        <div className="forms">
-          <div className="inputs">
-            <h3 style={{ color: "#000000" }} className="pt-2">
-              {newUser ? "Create an Account" : "Login"}
-            </h3>
-
-            <div className="d-flex justify-content-center align-items-center">
-              <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-                {newUser && (
-                  <TextField
-                    onBlur={handleBlur}
-                    type="text"
-                    name="name"
-                    id="standard-basic"
-                    label="Your name"
-                    required
-                  />
-                )}
-
-                <TextField
+      <TopBar></TopBar>
+      <div className="login-form  ">
+        <form onSubmit={handleSubmit}>
+          <h1 style={{ color: "orange" }} className="text-center mt-5">
+            {newUser ? "Create an Account" : "User Login"}
+          </h1>
+          <div className="row d-flex justify-content-center align-items-center">
+            {newUser && (
+              <div className="form-group col-12 col-md-8">
+                <input
                   onBlur={handleBlur}
                   type="text"
-                  name="email"
-                  id="standard-basic"
-                  label="Your email address"
+                  name="name"
+                  className="form-control"
+                  placeholder="Your name "
                   required
                 />
-                <TextField
+              </div>
+            )}
+
+            <div className="form-group col-12 col-md-8">
+              <input
+                onBlur={handleBlur}
+                type="text"
+                name="email"
+                className="form-control"
+                placeholder="Your  email Address "
+                required
+              />
+            </div>
+            <div className="form-group col-12 col-md-8">
+              <input
+                onBlur={handleBlur}
+                type="password"
+                name="password"
+                className="form-control"
+                placeholder="Enter your password  "
+                required
+              />
+            </div>
+            {newUser && (
+              <div className="form-group col-12 col-md-8">
+                <input
                   onBlur={handleBlur}
                   type="password"
-                  name="password"
-                  id="standard-basic"
-                  label="Enter Your password"
+                  name="confirm"
+                  className="form-control"
+                  placeholder="Enter confirm password  "
                   required
                 />
+              </div>
+            )}
 
-                {newUser && (
-                  <TextField
-                    onBlur={handleBlur}
-                    type="password"
-                    name="confirm"
-                    id="standard-basic"
-                    label="Enter Your confirm password"
-                    required
+            {!newUser && (
+              <div className="from-group col-12 col-md-8 d-flex justify-content-between ">
+                <div class="form-group form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
                   />
-                )}
+                  <label class="form-check-label" for="exampleCheck1">
+                    Remember Me
+                  </label>
+                </div>
+                <div>
+                  <p
+                    onClick={() => user.email && sendVerification(user.email)}
+                    style={{ color: "orange", cursor: "pointer" }}
+                  >
+                    Forget Password
+                  </p>
+                </div>
+              </div>
+            )}
 
-                {!newUser && (
-                  <div className="from-group  d-flex justify-content-between ">
-                    <div class="form-group form-check">
-                      <input
-                        type="checkbox"
-                        class="form-check-input"
-                        id="exampleCheck1"
-                      />
-                      <label class="form-check-label" for="exampleCheck1">
-                        Remember Me
-                      </label>
-                    </div>
-                    <div>
-                      <p
-                        onClick={() => forgetPassword(user.email)}
-                        style={{ color: "orange", cursor: "pointer" }}
-                      >
-                        Forget Password
-                      </p>
-                    </div>
-                  </div>
-                )}
-
-                <button className="submit" type="submit">
-                  {newUser ? "Create an Account" : "Login"}
-                </button>
-
-               <span>
-               {newUser
-                  ? "Already have an account?"
-                  : "Don't have an account?"}
-               </span>
-                <span
-                  style={{ cursor: "pointer" }}
-                  onClick={() => setNewUser(!newUser)}
-                  className="text-login-create"
-                >
-                  {newUser ? "Login" : " Create an account"}
-                </span>
-              </form>
+            <div className="col-12 col-md-8  ">
+              <button className="submit-btn" type="submit">
+                {newUser ? "Create an Account" : "Login"}
+              </button>
             </div>
           </div>
+        </form>
 
-          <p style={{ color: "red" }}>{user.error}</p>
-          {user.success && (
-            <p style={{ color: "green" }}>
-              User {newUser ? "created" : "Logged In"} successfully
+        <div className="">
+          {newUser ? "Already have an account?" : "Don't have an account?"}
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => setNewUser(!newUser)}
+            className="text-warning"
+          >
+            {newUser ? "Login" : " Create an account"}
+          </span>
+        </div>
+
+        <p style={{ color: "red" }}>{user.error}</p>
+        {user.success && (
+          <p style={{ color: "green" }}>
+            User {newUser ? "created" : "Logged In"} successfully
+          </p>
+        )}
+        <hr />
+
+        {/*   {user.isSignedIn ? (
+            <button onClick={signOut}>Sign Out</button>
+          ) : (
+          
+              
+              <p className="btn btn-success" onClick={googleSignIn}>
+               Continue With Google Sign In
             </p>
+         
           )}
+     
+      
+      <button   onClick={fbSignIn}>
+          Continue With Facebook Sign In
+        </button> */}
+      </div>
+      <div
+        className="col-12 col-md-8"
+        style={{ width: "500px", margin: "auto" }}
+      >
+        <p style={{ textAlign: "center" }}>---------- Or -----------</p>
 
-          <div className="mt-3">
-            <div className="mt-3">
-              <div className="row facebook" onClick={fbSignIn}>
-                <div className="col-md-2 icon">
-                  <img src={fb} alt="" />
-                </div>
-                <div className="col-md-10 ">
-                  <h4>
-                    <strong>Continue with facebook</strong>
-                  </h4>
-                </div>
-              </div>
-              <div className="row google" onClick={googleSignIn}>
-                <div className="col-md-2 icon">
-                  <img src={google} alt="" />
-                </div>
-                <div className="col-md-10">
-                  <h4>
-                    <strong>Continue with google</strong>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div
+          onClick={fbSignIn}
+          style={{ cursor: "pointer" }}
+          className="login-section"
+        >
+          <img
+            style={{ width: "30px", height: "30px", marginRight: "10px" }}
+            src={fb}
+            alt=""
+          />
+          <p>Continue with Facebook</p>
+        </div>
+        <div
+          onClick={googleSignIn}
+          style={{ cursor: "pointer" }}
+          className="login-section"
+        >
+          <img
+            style={{ width: "30px", height: "30px", marginRight: "10px" }}
+            src={google}
+            alt=""
+          />
+          <p>Continue with Google</p>
         </div>
       </div>
     </section>
-
-    
   );
 };
 
