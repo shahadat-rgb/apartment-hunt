@@ -1,0 +1,26 @@
+.topBar {
+    background-color: white;
+    height: 100px; 
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+}
+
+.topBar img{
+    width: 100px;
+    height: 54.8px;
+}
+
+.login-btn{
+    width: 104px;
+    height: 44px;
+    left: 1192px;
+    top: 37px;
+    background: #275A53;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
