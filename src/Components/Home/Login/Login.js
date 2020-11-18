@@ -12,8 +12,9 @@ import {
 } from "./LoginManager";
 
 import "./Login.css";
-import fb from "../../../image/logos/Group 2.png";
-import google from "../../../image/logos/Group 573.png";
+import fb from "../../../images/logos/Group 2.png";
+import google from "../../../images/logos/Group 573.png";
+import TopBar from "../TopBar/TopBar";
 
 const Login = () => {
   const [newUser, setNewUser] = useState(false);
@@ -92,6 +93,7 @@ const Login = () => {
   };
   return (
     <section>
+      <TopBar></TopBar>
       <div className="login-form  ">
         <form onSubmit={handleSubmit}>
           <h1 style={{ color: "orange" }} className="text-center mt-5">
@@ -168,7 +170,7 @@ const Login = () => {
             )}
 
             <div className="col-12 col-md-8  ">
-              <button className="submit" type="submit">
+              <button className="submit-btn" type="submit">
                 {newUser ? "Create an Account" : "Login"}
               </button>
             </div>

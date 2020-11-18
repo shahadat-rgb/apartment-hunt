@@ -1,0 +1,15 @@
+.input{
+    width: 530px;
+    height: 60px;
+    padding: 20px 10px; 
+    border: 0.666667px solid #C9C9C9;
+    border-radius: 3.33333px;
+}
+
+.send-btn{
+    width: 170px;
+    height: 45px;
+    background-color: #111430;
+    color: white;
+    border: none;
+}

@@ -3,10 +3,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarker, faBed, faBath } from "@fortawesome/free-solid-svg-icons";
 import "./ApartmentList.css"
+import { Link } from "react-router-dom";
 
 const ApartmentList = ({ houseInfo }) => {
   //   const history = useHistory();
-  console.log(houseInfo);
+  console.log(houseInfo._id);
 
   return (
     <div>
@@ -14,7 +15,7 @@ const ApartmentList = ({ houseInfo }) => {
         <div class="card-body">
           <img
             className="card-img-top"
-            src={`http://localhost:5000/${houseInfo.image}`}
+            src={`https://sleepy-everglades-57765.herokuapp.com/${houseInfo.image}`}
             alt=""
           />
           <br />
@@ -48,7 +49,10 @@ const ApartmentList = ({ houseInfo }) => {
               <h2 className="price"> ${houseInfo.price} </h2>
             </div>
             <div className=" ml-3 col-md-6">
-              <button className="details-btn">details</button>
+              <Link to={`/houseDetails/${houseInfo._id}`}>
+               <button className="details-btn">details</button>
+              </Link>
+
             </div>
           </div>
         </div>
