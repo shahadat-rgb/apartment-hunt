@@ -3,6 +3,14 @@ This is our team project. In these projects, we are learning many things and gai
 
 [Website](https://apartment-hunt-7329e.web.app/)
 
+## Work history
+##### shahadat hossain :
+* Implement home page,house section,House details page and service section page.
+##### nahidul islam :
+* Implement Navbar,Banner and footer design of landing home page.and fully login page with firebase authentication.
+#### Imdaul islam  :
+* Implement Backend side using node.js and mongodb.He also implement dashbord section bord.
+    
 ## Features of project:
 
 - A full stack single page web application with a dashboard
