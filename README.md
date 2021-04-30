@@ -38,6 +38,6 @@ This is our team project. In these projects, we are learning many things and gai
 
 ![screencapture-apartment-hunt-7329e-web-app-2020-11-19-00_03_00](https://user-images.githubusercontent.com/39863835/99569417-cc3c5180-29fa-11eb-93d5-b3fb1f536ecf.png)
 
-![s2](https://user-images.githubusercontent.com/39863835/99569957-761bde00-29fb-11eb-8a29-28ec7e1dc8c1.jpg)
+                          ![s2](https://user-images.githubusercontent.com/39863835/99569957-761bde00-29fb-11eb-8a29-28ec7e1dc8c1.jpg)
 
 ![s3](https://user-images.githubusercontent.com/39863835/99570764-a1eb9380-29fc-11eb-8b9e-b27bc5f0969c.jpg)
